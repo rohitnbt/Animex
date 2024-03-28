@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import "./style.scss"
-import logo from "../../assets/animex_logo.svg"
 import { useNavigate } from 'react-router-dom'
 import useFetch from '../../hook/useFetch'
 import { RiSearch2Line } from "react-icons/ri";
