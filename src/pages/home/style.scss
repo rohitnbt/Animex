@@ -1,0 +1,78 @@
+@import "../../mixins.scss";
+
+.Home-page {
+    .banner-wrapper {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        height: 450px;
+        @include md {
+            height: 700px;
+        }
+    }
+
+    .banner-overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: var(--gradient)
+    }
+
+    .banner-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        input[type=text] {
+            max-width: 500px;
+            width: 100%;
+            padding: 5px 10px;
+            border-radius: 50px 0px 0px 50px;
+            color: #000;
+            outline: unset;
+            font-size: 14px;
+            height: 40px;
+            border: 1px solid #fff;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 40px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+        }
+    
+        .search-box {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+            padding: 0 20px;
+        }
+    
+        button {
+            height: 40px;
+            border-radius: 0px 50px 50px 0px;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #119824, #119898);
+            border: unset;
+            color: #fff;
+            font-size: 14px;
+            @include md {
+                padding: 10px 30px;
+            }
+        }
+    }
+}

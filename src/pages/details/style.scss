@@ -1,0 +1,65 @@
+.playbtn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    svg {
+        width: 60px;
+        height: 60px;
+    }
+    .text {
+        font-size: 20px;
+        transition: all 0.7s ease-in-out;
+    }
+    .triangle {
+        stroke-dasharray: 240;
+        stroke-dashoffset: 480;
+        stroke: white;
+        transform: translateY(0);
+        transition: all 0.7s ease-in-out;
+    }
+    .circle {
+        stroke: white;
+        stroke-dasharray: 650;
+        stroke-dashoffset: 1300;
+        transition: all 0.5s ease-in-out;
+    }
+    &:hover {
+        .text {
+            color: var(--pink);
+        }
+        .triangle {
+            stroke-dashoffset: 0;
+            opacity: 1;
+            stroke: var(--pink);
+            animation: trailorPlay 0.7s ease-in-out;
+        }
+        .circle {
+            stroke-dashoffset: 0;
+            stroke: var(--pink);
+        }
+    }
+
+}
+
+.VideoPopup {
+    position: fixed;
+    background: #00000050;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .video {
+        position: relative;
+        svg {
+            position: absolute;
+            right: 0px;
+            top: -20px;
+            color: #ffffff;
+        }
+    }
+}

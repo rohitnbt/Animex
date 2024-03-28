@@ -1,0 +1,125 @@
+@import "../../mixins.scss";
+
+header.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background1);
+    padding: 20px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    @include md{
+        height: auto;
+    }
+    .logo {
+        img {
+            width: 100px;
+            @include md {
+                width: 200px;
+            }
+        }
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 7px 10px;
+        border-radius: 50px;
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        font-size: 12px;
+        outline: none;
+    }
+
+    input[type="text"]::placeholder {
+        color: #ffffff50;
+    }
+    
+    .nav-items {
+        display: flex;
+        align-items: center;
+        width: 400px;
+        justify-content: end;
+        gap: 10px;
+        @include md {
+            gap: 20px;
+        }
+    }
+
+    svg {
+        color: #fff;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include md {
+            gap: 20px;
+        }
+    }
+
+    li {
+        list-style: none;
+        color: #fff;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    li:hover {
+        color: #F71735;
+    }
+    .search-box {
+        position: relative;
+        width: 100%;
+        .result-box {
+            background: #161032;
+            padding: 10px;
+            height: 329px;
+            position: absolute;
+            width: 100%;
+            border-radius: 5px;
+            top: 35px;
+            z-index: 1;
+            border: 1px solid #fff;
+            .content{
+                height: 309px;
+                width: 100%;
+                border-radius: 5px;
+                overflow: scroll;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .item img {
+                aspect-ratio: 2/3;
+                height: 100%;
+                border-radius: 3px;
+                object-fit: cover;
+            }
+            .item {
+                display: flex;
+                gap: 10px;
+                height: 15%;
+                h4 {
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: normal;
+                    line-height: 14px;
+                }
+            }
+        }
+    }
+
+    .mobile-search {
+        position: absolute;
+        top: 60px;
+        background: linear-gradient(90deg, #119824, #119898);
+        z-index: 1;
+        width: 100%;
+        left: 0;
+        padding: 10px 20px;
+    }
+}

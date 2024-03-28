@@ -1,0 +1,132 @@
+@import "../../../mixins.scss";
+
+.details-section {
+    display: flex;
+    gap: 30px;
+    padding: 10px 0px;
+    flex-direction: column;
+    @include md {
+        flex-direction: row;
+        padding: 30px 20px;
+    }
+    .poster {
+        width: 100%;
+        @include md {
+            width: 30%;
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+    }
+
+    .content {
+        width: 100%;
+        @include md {
+            width: 70%;
+        }
+        h2.title {
+            color: #fff;
+            font-size: 22px;
+            @include md {
+                font-size: 35px;
+            }
+        }
+
+        .details {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        p.description {
+            color: #fff;
+            line-height: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    }
+    .chart {
+        position: relative;
+        display: flex;
+        gap: 30px;
+        margin: 20px 0;
+        svg.CircularProgressbar {
+            max-width: 64px;
+        }
+    }
+}
+
+.skeleton-items-poster {
+    display: flex;
+    gap: 0px;
+    padding: 10px 0px;
+    flex-direction: column;
+    @include md {
+        flex-direction: row;
+        padding: 50px 20px;
+        gap: 30px;
+    }
+    .poster {
+        width: 100%;
+        aspect-ratio: 2/3;
+        border-radius: 15px;
+        @include md {
+            width: 30%;
+        }
+    }
+    .content {
+        width: 100%;
+        @include md {
+            width: 70%;
+        }
+        .title {
+            height: 50px;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 30px;
+            @include md {
+                width: 70%;
+            }
+        }
+        .details {
+            display: flex;
+            gap: 20px;
+            .details-item {
+                height: 20px;
+                border-radius: 5px;
+                width: 10%;
+            }
+        }
+        .chart {
+            display: flex;
+            gap: 20px;
+            .round {
+                width: 60px;
+                height: 60px;
+                border-radius: 60px;
+            }
+        }
+        .desc {
+            height: 293px;
+            margin: 30px 0px;
+            border-radius: 5px;
+        }
+
+        .title {
+            height: 20px;
+            width: 100%;
+            margin: 20px auto;
+            border-radius: 5px;
+            @include md {
+                width: 70%;
+            }
+        }
+    }
+}

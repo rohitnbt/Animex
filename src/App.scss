@@ -1,0 +1,61 @@
+:root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    --background: #2A0C4E;
+    --background1: #161032;
+    --pink: #da2f68;
+    --gradient: linear-gradient(0deg, #2A0C4E, #2A0C4E20);
+    --gradient1: linear-gradient(270deg, #F6AE2D, #F26419);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.skeleton {
+    position: relative;
+    overflow: hidden;
+    background-color: #230844;
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background-image: linear-gradient(
+            90deg,
+            rgba(#161032, 0) 0,
+            rgba(#161032, 0.2) 20%,
+            rgba(#161032, 0.5) 60%,
+            rgba(#161032, 0)
+        );
+        animation: shimmer 2s infinite;
+        content: "";
+    }
+
+    @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+}
