@@ -38,8 +38,8 @@ export const Header = () => {
   window.addEventListener('resize', handleResize);
   return (
     <header className='Header'>
-        <div className="logo">
-            <AnimexLogo onClick={() => navigate("/")}/>
+        <div className="logo" onClick={() => navigate("/")}>
+            <AnimexLogo/>
         </div>
         <div className="nav-items">
           {
