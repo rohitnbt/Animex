@@ -6,7 +6,7 @@ import useFetch from '../../hook/useFetch'
 import { RiSearch2Line } from "react-icons/ri";
 import { useDispatch, useSelector } from 'react-redux'
 import { setIsMobile } from '../../store/mobileSlice'
-
+import { AnimexLogo } from '../icons/AnimexLogo'
 export const Header = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
@@ -40,7 +40,7 @@ export const Header = () => {
   return (
     <header className='Header'>
         <div className="logo">
-            <img src={logo} alt="" onClick={() => navigate("/")} />
+            <AnimexLogo onClick={() => navigate("/")}/>
         </div>
         <div className="nav-items">
           {
