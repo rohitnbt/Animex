@@ -16,8 +16,13 @@ export const Header = () => {
   const isMobile = useSelector((state) => state.mobile.isMobile);
 
   const handleSearch = (input) => {
-    setQuery(input)
-    setResult(true)
+    setQuery(input);
+    setResult(true);
+  }
+
+  const hideResult = () => {
+    setQuery("");
+    setResult(false);
   }
 
   useEffect(()=>{
@@ -45,7 +50,7 @@ export const Header = () => {
           {
             !isMobile ? (
             <div className='search-box'>
-              <input type="text" placeholder='Search here...' onChange={(e)=>handleSearch(e.target.value)}/>
+              <input type="text" placeholder='Search here...'value={query} onChange={(e)=>handleSearch(e.target.value)}/>
               {
                 result && (
                   <div className="result-box">
@@ -79,7 +84,7 @@ export const Header = () => {
             ) :
             ( <RiSearch2Line onClick={()=>setShowSearchBox(!showSearchBox)}/> )
           }
-            <ul>
+            <ul onClick={hideResult}>
                 <li onClick={() => navigate("explore/anime")}>Anime</li>
                 <li onClick={() => navigate("explore/manga")}>Manga</li>
             </ul>
