@@ -1,3 +1,5 @@
+@import "../../mixins.scss";
+
 .playbtn {
     display: flex;
     align-items: center;
@@ -53,6 +55,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 5;
+    width: 100%;
     .video {
         position: relative;
         svg {
@@ -60,6 +64,14 @@
             right: 0px;
             top: -20px;
             color: #ffffff;
+        }
+        > div {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 16/9;
+            @include md {
+                width: 720px !important;
+            }
         }
     }
 }

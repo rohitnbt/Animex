@@ -16,7 +16,7 @@ export const PosterSection = ({mediaType ,id}) => {
             !loading ? (
                 <div className="details-section">
                 <div className="poster">
-                    <img src={data?.data.images.jpg.image_url} alt="" />
+                    <img src={data?.data?.images.jpg.image_url} alt="" />
                 </div>
 
                 <div className="content">
@@ -24,10 +24,10 @@ export const PosterSection = ({mediaType ,id}) => {
                         {data?.data?.title_english || data?.data?.name}
                     </h2>
                     <div className="chart">
-                    { mediaType === "characters" ? "" : <CircularProgressbar value={data?.data.score} maxValue={10} text={`${data?.data.score}`}  styles={buildStyles({pathColor: `var(--pink)`, textColor: '#fff', trailColor: 'var(--background)'})}/>}
+                    { mediaType === "characters" ? "" : <CircularProgressbar value={data?.data?.score} maxValue={10} text={`${data?.data?.score}`}  styles={buildStyles({pathColor: `var(--pink)`, textColor: '#fff', trailColor: 'var(--background)'})}/>}
                         
                         <div className="playbtn" onClick={()=>{
-                            setVideoId(data?.data.trailer.embed_url)
+                            setVideoId(data?.data?.trailer.embed_url)
                             setShow(true)
                         }}>
                         { mediaType === "anime" ? <PlayIcon /> : ""}              

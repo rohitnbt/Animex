@@ -59,7 +59,7 @@ export const Explore = () => {
                               loader={<Spinner />}
                         >
             {
-                data?.data.map((item)=>
+                data?.data?.map((item)=>
                     <div className="slide" key={item.mal_id} onClick={()=>{navigate(`/anime/${item.mal_id}`)}}>
                         <div className="image-overlay"></div>
                         <img src={item.images.jpg.image_url} alt="" />

@@ -10,7 +10,7 @@ export const ReviewsSection = ({mediaType ,id}) => {
         <h2>Reviews</h2>
         <div className="review-slider">
             {
-                data?.data.map((item)=>{
+                data?.data?.map((item)=>{
                     return(
                     <div key={item.mal_id} className='slide'>
                         <div className="header">
