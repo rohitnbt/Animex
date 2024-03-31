@@ -60,9 +60,11 @@ export const SearchResult = () => {
                 <div>
                     <div className='ul'>
                         <p className={`li ${active === 'Anime' ? 'active' : ''}`} onClick={()=>{setEndPoint("anime") 
-                        setActiveHandle('Anime')}}>Anime</p>
+                        setActiveHandle('Anime')
+                        setPageNum(1)}}>Anime</p>
                         <p className={`li ${active === 'Manga' ? 'active' : ''}`} onClick={()=>{setEndPoint("manga")
-                        setActiveHandle('Manga')}}>Manga</p>
+                        setActiveHandle('Manga')
+                        setPageNum(1)}}>Manga</p>
                     </div>
                 </div>
             </div>

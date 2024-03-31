@@ -56,8 +56,8 @@ export const Header = () => {
                   <div className="result-box">
                     <div className="content">
                     {
-                      data ? (
-                        data?.data.map((item)=>
+                      !loading ? (
+                        data?.data?.map((item)=>
                         <div className="item" key={item.mal_id} onClick={()=> {navigate(`/${item.type}/${item.mal_id}`)
                         setResult(false)}}>
                           <img src={item.images.jpg.image_url} alt="" />
