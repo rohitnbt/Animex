@@ -23,6 +23,7 @@ export const Header = () => {
   const hideResult = () => {
     setQuery("");
     setResult(false);
+    setShowSearchBox(false);
   }
 
   useEffect(()=>{
@@ -58,8 +59,7 @@ export const Header = () => {
                     {
                       !loading ? (
                         data?.data?.map((item)=>
-                        <div className="item" key={item.mal_id} onClick={()=> {navigate(`/${item.type}/${item.mal_id}`)
-                        setResult(false)}}>
+                        <div className="item" key={item.mal_id} onClick={()=> {navigate(`/${item.type}/${item.mal_id}`); setResult(false); setShowSearchBox(false);}}>
                           <img src={item.images.jpg.image_url} alt="" />
                           <h4>{item.title || item.given_name || item.name}</h4>
                         </div>
@@ -93,7 +93,7 @@ export const Header = () => {
           (showSearchBox && isMobile) && (
           <div className="mobile-search">
           <div className='search-box'>
-                <input type="text" placeholder='Search here...' onChange={(e)=>handleSearch(e.target.value)}/>
+                <input type="text" placeholder='Search here...' value={query} onChange={(e)=>handleSearch(e.target.value)}/>
                 {
                   result && (
                     <div className="result-box">
@@ -101,8 +101,7 @@ export const Header = () => {
                       {
                         data ? (
                           data?.data?.map((item)=>
-                          <div className="item" key={item.mal_id} onClick={()=> {navigate(`/${item.type}/${item.mal_id}`)
-                          setResult(false)}}>
+                          <div className="item" key={item.mal_id} onClick={()=> {navigate(`/${item.type}/${item.mal_id}`); setResult(false); setShowSearchBox(false);}}>
                             <img src={item.images.jpg.image_url} alt="" />
                             <h4>{item.title || item.given_name || item.name}</h4>
                           </div>
