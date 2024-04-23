@@ -59,7 +59,7 @@ export const Header = () => {
                     {
                       !loading ? (
                         data?.data?.map((item)=>
-                        <div className="item" key={item.mal_id} onClick={()=> {navigate(`/${item.type}/${item.mal_id}`); setResult(false); setShowSearchBox(false);}}>
+                        <div className="item" key={item.mal_id} onClick={()=> {navigate(`/anime/${item.mal_id}`); setResult(false); setShowSearchBox(false);}}>
                           <img src={item.images.jpg.image_url} alt="" />
                           <h4>{item.title || item.given_name || item.name}</h4>
                         </div>
@@ -101,7 +101,7 @@ export const Header = () => {
                       {
                         data ? (
                           data?.data?.map((item)=>
-                          <div className="item" key={item.mal_id} onClick={()=> {navigate(`/${item.type}/${item.mal_id}`); setResult(false); setShowSearchBox(false);}}>
+                          <div className="item" key={item.mal_id} onClick={()=> {navigate(`/anime/${item.mal_id}`); setResult(false); setShowSearchBox(false);}}>
                             <img src={item.images.jpg.image_url} alt="" />
                             <h4>{item.title || item.given_name || item.name}</h4>
                           </div>

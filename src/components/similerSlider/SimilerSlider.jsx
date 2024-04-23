@@ -3,8 +3,6 @@ import "./style.scss"
 import Slider from "react-slick";
 import useFetch from '../../hook/useFetch'
 import { useNavigate } from 'react-router-dom'
-import { GrFormNext } from "react-icons/gr";
-import { GrFormPrevious } from "react-icons/gr";
 import { useSelector } from 'react-redux';
 
 
@@ -26,7 +24,7 @@ export const SimilerSlider = ({title, mediaType, url}) => {
        {
         navigate(`/characters /${id}`);
        }
-        
+        alert(id)
     }
 
     const settings = {
@@ -50,8 +48,8 @@ export const SimilerSlider = ({title, mediaType, url}) => {
             !loading ? (
         <div className="slider-container slides">
         <Slider {...settings}>
-          {data?.data?.map((item, index) => (
-              <div className="slide" key={index} onClick={()=> {handleClick(item.mal_id)}}>
+          {data?.data?.map((item) => (
+              <div className="slide" key={item.mal_id} onClick={() => { handleClick(item?.anime?.mal_id || item?.manga?.mal_id);  }}>
               <div className="poster">
                   <img src={item?.anime?.images?.jpg?.image_url || item?.manga?.images?.jpg?.image_url} alt="" />
                   <div className="slide-overlay"></div>
