@@ -24,7 +24,6 @@ export const SimilerSlider = ({title, mediaType, url}) => {
        {
         navigate(`/characters /${id}`);
        }
-        alert(id)
     }
 
     const settings = {
